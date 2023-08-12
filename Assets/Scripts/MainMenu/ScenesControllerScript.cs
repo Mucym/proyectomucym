@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 public class ScenesControllerScript : MonoBehaviour
 {
 
-
-
     public void LoadDisksGame()
     {
         SceneManager.LoadScene("DisksScene");
@@ -36,6 +34,11 @@ public class ScenesControllerScript : MonoBehaviour
     public void LoadColorSquares()
     {
         SceneManager.LoadScene("ColorSquaresScene");
+    }
+
+    public void LoadMagicSquare()
+    {
+        SceneManager.LoadScene("MagicSquare");
     }
 
     public void CloseGame()

@@ -25,7 +25,7 @@ public class ChangeImage1 : MonoBehaviour
         {
             selectNum += 1;
 
-            if (selectNum == 6)
+            if (selectNum == 7)
             {
                 selectNum = 0;
             }
@@ -38,7 +38,7 @@ public class ChangeImage1 : MonoBehaviour
             }
             else if (selectNum == 0)
             {
-                selectNum = 6;
+                selectNum = 7;
             }
         }
         

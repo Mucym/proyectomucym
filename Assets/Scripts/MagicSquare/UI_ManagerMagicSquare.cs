@@ -1,26 +1,27 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class MagicUIManager : MonoBehaviour
+
+public class UI_ManagerMagicSquare : MonoBehaviour
 {
     public Text timerLabel;
     public float time;
     public bool startTimer;
 
     public GameObject tipPanel;
+
     public Animator _victoryAnimator;
+
     private Animator _tipAnimator;
-    // Start is called before the first frame update
+
     void Start()
     {
         timerLabel.text = "Tiempo\n0:00";
-        //_victoryAnimator = GameObject.Find("VictoryPanel").GetComponent<Animator>();
         _tipAnimator = tipPanel.GetComponent<Animator>();
         tipPanel.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (startTimer)
@@ -28,6 +29,7 @@ public class MagicUIManager : MonoBehaviour
             CalculateTime();
         }
     }
+
     void CalculateTime()
     {
         time += Time.deltaTime;
@@ -56,7 +58,6 @@ public class MagicUIManager : MonoBehaviour
 
     public void ShowVictoryScreen()
     {
-        //Debug.Log("YOU WON!");
         _victoryAnimator.SetBool("ShowVictory", true);
     }
 
@@ -70,7 +71,6 @@ public class MagicUIManager : MonoBehaviour
         tipPanel.SetActive(true);
         AudioSource asTip = tipPanel.GetComponent<AudioSource>();
         asTip.Play();
-        //Handheld.Vibrate();
     }
 
     public void ShowTip()
@@ -82,5 +82,6 @@ public class MagicUIManager : MonoBehaviour
     {
         _tipAnimator.SetBool("ShowTip", false);
     }
+
 
 }

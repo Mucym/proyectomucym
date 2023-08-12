@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RL&HM.unity
     guid: abdd42f7446e52f43b8848f2af1905f5
+  - enabled: 1
+    path: Assets/Scenes/MagicSquare.unity
+    guid: c891e8f0c1fc1044c8136e33a45d1fba
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: bee59cfb14ad8254a802852cdc6de782, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bf6f3c9564afcf1488f4619747dc6d33, type: 2}

@@ -1,9 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MagicSquarePlayerController : MonoBehaviour
+public class PlayerControllerMagicSquare : MonoBehaviour
 {
     private GameObject _numberSelected;
 
@@ -12,8 +12,7 @@ public class MagicSquarePlayerController : MonoBehaviour
     public int movesCount;
 
     private MagicSquareGameManager _gameManager;
-
-    private MagicUIManager _uiManager;
+    private UI_ManagerMagicSquare _uiManager;
 
     private Outline _outline;
 
@@ -22,7 +21,7 @@ public class MagicSquarePlayerController : MonoBehaviour
     {
         movesCount = 0;
         _gameManager = GameObject.Find("GameManager").GetComponent<MagicSquareGameManager>();
-        _uiManager = GameObject.Find("Canvas").GetComponent<MagicUIManager>();
+        _uiManager = GameObject.Find("Canvas").GetComponent<UI_ManagerMagicSquare>();
     }
 
     // Update is called once per frame
@@ -36,7 +35,7 @@ public class MagicSquarePlayerController : MonoBehaviour
             {
                 if (_numberSelected == null && hitInfo.transform.tag == "Number") //Select the disk to move
                 {
-
+                    
                     _numberSelected = hitInfo.transform.gameObject;
                     //Focus selected disk
                     _outline = hitInfo.transform.gameObject.GetComponent<Outline>();
@@ -54,8 +53,8 @@ public class MagicSquarePlayerController : MonoBehaviour
                     _numberReplace.transform.position = auxPos;
 
                     //Logic to change values within pieces
-                    Numbers num1 = _numberSelected.GetComponent<Numbers>();
-                    Numbers num2 = _numberReplace.GetComponent<Numbers>();
+                    OptionsNumbers num1 = _numberSelected.GetComponent<OptionsNumbers>();
+                    OptionsNumbers num2 = _numberReplace.GetComponent<OptionsNumbers>();
                     int auxRow = num1.row;
                     int auxCol = num1.col;
 
