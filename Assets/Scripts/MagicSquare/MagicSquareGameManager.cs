@@ -42,7 +42,69 @@ public class MagicSquareGameManager : MonoBehaviour
 
     private bool CheckIfWin()
     {
-        return true;
+        bool checkColumnSum, checkRowSum, checkDiagonalSum, checkAntiDiagonalSum;
+        checkColumnSum = false;
+        checkRowSum = false;
+        checkDiagonalSum = false;
+        checkAntiDiagonalSum = false;
+        /*
+        int sumRows = 0;
+        int sumColumns = 0;
+        int sumDiagonal = 0;
+        int sumAntiDiagonal = 0;
+        */
+        GameObject[] nums = GameObject.FindGameObjectsWithTag("Number");
+        int size = nums.Length;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            OptionsNumbers numScript = nums[i].GetComponent<OptionsNumbers>();
+            //Debug.Log("[" + numScript.row + "," + numScript.col + "] = " + numScript.value);
+
+            if (numScript.row != 4 && numScript.col != 4)
+            {
+                if (numScript.value == 0) //If there are still clean pieces on the evaluation board: row -> 0,1,2 or col -> 0,1,2
+                    return false;
+                else
+                    _numbers[numScript.row, numScript.col] = numScript.value; //Load the value of the piece on it's current position 
+            }
+        }
+
+        if ((_numbers[0, 0] + _numbers[0, 1] + _numbers[0, 2]) == 15)
+        {
+            if ((_numbers[1, 0] + _numbers[1, 1] + _numbers[1, 2]) == 15)
+            {
+                if ((_numbers[2, 0] + _numbers[2, 1] + _numbers[2, 2]) == 15)
+                {
+                    checkRowSum = true;
+                }
+      
+            }
+        }
+
+        if ((_numbers[0, 0] + _numbers[1, 0] + _numbers[2, 0]) == 15)
+        {
+            if ((_numbers[0, 1] + _numbers[1, 1] + _numbers[2, 1]) == 15)
+            {
+                if ((_numbers[0, 2] + _numbers[1, 2] + _numbers[2, 2]) == 15)
+                {
+                    checkColumnSum = true;
+                }
+            }
+        }
+
+        if ((_numbers[0, 0] + _numbers[1, 1] + _numbers[2, 2]) == 15)
+        {
+            checkDiagonalSum = true;
+        }
+
+        if ((_numbers[0, 2] + _numbers[1, 1] + _numbers[2, 0] )== 15)
+        {
+            checkAntiDiagonalSum = true;
+        }
+
+   
+            return checkColumnSum && checkRowSum && checkDiagonalSum && checkAntiDiagonalSum;
     }
 
     public void CheckLastMovement()
