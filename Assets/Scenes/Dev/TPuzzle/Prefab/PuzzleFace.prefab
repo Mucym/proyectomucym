@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5404684187477405415}
   - component: {fileID: 5404684187477405412}
+  - component: {fileID: 4370230946994065538}
   m_Layer: 0
   m_Name: Vertex1
   m_TagString: Untagged
@@ -45,6 +46,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4370230946994065538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404684187477405414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bc8ebf0f61f764b90cc2152d5570cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 1
+  targetVertex: {fileID: 4370230946994065538}
+  collidingWithTargetVertex: 0
 --- !u!1 &5404684187842983892
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5404684187842983893}
   - component: {fileID: 5404684187842983890}
+  - component: {fileID: 8252644019044208262}
   m_Layer: 0
   m_Name: Vertex2
   m_TagString: Untagged
@@ -90,6 +107,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8252644019044208262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404684187842983892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bc8ebf0f61f764b90cc2152d5570cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  targetVertex: {fileID: 8252644019044208262}
+  collidingWithTargetVertex: 0
 --- !u!1 &5404684188576092669
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5404684188576092666}
+  - component: {fileID: 4669362327052776700}
   m_Layer: 0
   m_Name: PuzzleFace
   m_TagString: Untagged
@@ -125,6 +158,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4669362327052776700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404684188576092669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27de1c3c788d0d4f9d2d0e3e8d39152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 0
+  height: 0
+  vertexScale: 0.1
+  targetFace: {fileID: 0}
+  vertices:
+  - {fileID: 4370230946994065538}
+  - {fileID: 8252644019044208262}
+  - {fileID: 5013928049231823049}
+  - {fileID: 1435243650835108660}
 --- !u!1 &5404684188581768743
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5404684188581768740}
   - component: {fileID: 5404684188581768741}
+  - component: {fileID: 5013928049231823049}
   m_Layer: 0
   m_Name: Vertex3
   m_TagString: Untagged
@@ -170,6 +225,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5013928049231823049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404684188581768743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bc8ebf0f61f764b90cc2152d5570cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 2
+  targetVertex: {fileID: 5013928049231823049}
+  collidingWithTargetVertex: 0
 --- !u!1 &5404684189118477032
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5404684189118477033}
   - component: {fileID: 5404684189118477030}
+  - component: {fileID: 1435243650835108660}
   m_Layer: 0
   m_Name: Vertex4
   m_TagString: Untagged
@@ -215,3 +286,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1435243650835108660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404684189118477032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bc8ebf0f61f764b90cc2152d5570cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 3
+  targetVertex: {fileID: 1435243650835108660}
+  collidingWithTargetVertex: 0
